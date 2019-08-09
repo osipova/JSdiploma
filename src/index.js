@@ -1,5 +1,7 @@
 'use strict';
 
-import popup from './mo./modules/popup';
+import popup from './modules/popup';
+import sentenceBtn from './modules/sentenceBtn';
 
 popup();
+sentenceBtn();
