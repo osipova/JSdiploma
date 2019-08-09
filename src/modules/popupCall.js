@@ -1,30 +1,36 @@
 const popupCall = () => {
 
-  let popup = document.querySelector('.popup-call'),
-    popupContent = document.querySelector('.popup-content'),
-    popupBtn = document.querySelectorAll('.call-btn'),
-    popupClose = document.querySelector('.popup-close');
+  let body = document.querySelector('body');
 
-  popupBtn.forEach((elem) => {
-    elem.addEventListener('click', () => {
-      popup.style.display = 'block';
-    });
-  });
+  const openPopup = (className) => {
+    let popup = document.querySelector(className);
+    popup.style.display = 'block';
+  };
 
-  popup.addEventListener('click', (event) => {
-    let target = event.target;
-    if (target.classList.contains('popup-close')) {
-      popup.style.display = 'none';
-    } else {
-      target = target.closest('.popup-content');
-      if (!target) {
-        popup.style.display = 'none';
+  const closePopup = () => {
+    let popup = document.querySelectorAll('.popup');
+    popup.forEach((elem) => {
+      if (elem) {
+        elem.style.display = 'none';
       }
+    });
+  };
+
+  body.addEventListener('click', (event) => {
+    let target = event.target;
+    if (target.classList.contains('call-btn')) {
+      openPopup('.popup-call');
+    } else if (target.classList.contains('check-btn')) {
+      openPopup('.popup-check');
+    } else if (target.classList.contains('consultation-btn')) {
+      openPopup('.popup-consultation');
+    } else if (target.classList.contains('discount-btn')) {
+      openPopup('.popup-discount');
+    } else if (target.classList.contains('popup-close')) {
+      closePopup();
     }
   });
 
 };
-
-
 
 export default popupCall;
