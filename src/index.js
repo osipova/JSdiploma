@@ -1,5 +1,5 @@
 'use strict';
 
-import popupCall from './modules/popupCall';
+import popup from './mo./modules/popup';
 
-popupCall();
+popup();

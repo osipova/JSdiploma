@@ -1,4 +1,4 @@
-const popupCall = () => {
+const popup = () => {
 
   let body = document.querySelector('body');
 
@@ -33,4 +33,4 @@ const popupCall = () => {
 
 };
 
-export default popupCall;
+export default popup;
