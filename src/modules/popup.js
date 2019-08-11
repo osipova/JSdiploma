@@ -28,7 +28,7 @@ const popup = () => {
       openPopup('.popup-discount');
     } else if (target.classList.contains('popup-close')) {
       closePopup();
-    } else if (!target.closest('popup')) {
+    } else if (!target.closest('.popup-content')) {
       closePopup();
     }
   });
