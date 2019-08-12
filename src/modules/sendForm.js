@@ -1,7 +1,6 @@
-const sendForm = () => {
+const sendForm = (calcResult) => {
 
-  const form = document.querySelectorAll('form'),
-    mainForm = document.querySelectorAll('.main-form');
+  const form = document.querySelectorAll('.capture-form');
 
   const errorMassage = 'Что-то пошло не так...',
     loadMassage = 'Загурзка...',
@@ -11,6 +10,8 @@ const sendForm = () => {
   statusMessage.style.color = '#000';
   statusMessage.style.csstext = 'font-size: 2rem';
   statusMessage.classList.add('request');
+
+  const resultValue = document.getElementById('calc-result');
 
 
   form.forEach((item) => {
@@ -31,11 +32,27 @@ const sendForm = () => {
       //объект считывает данные формы и имеет обязательно атрибут name
       const formData = new FormData(item);
 
-      let body = {};
+      let dataForms = {};
 
       formData.forEach((val, key) => {
-        body[key] = val;
+        dataForms[key] = val;
       });
+
+      let body;
+
+      if (Object.keys(calcResult).length !== 0) {
+        body = Object.assign(dataForms, calcResult);
+      } else {
+        body = Object.assign({}, dataForms);
+      }
+
+      const inputDirectorForm = document.querySelector('.director-input').value;
+
+      console.log(inputDirectorForm);
+
+      if (inputDirectorForm) {
+        body[`question`] = inputDirectorForm;
+      }
 
       postData(body)
         .then((response) => {

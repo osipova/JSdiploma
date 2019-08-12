@@ -23,7 +23,7 @@ const constructor = () => {
       index = 0;
 
     if (target.closest('.construct-btn')) {
-      console.log(target);
+      //console.log(target);
       target = target.closest('.construct-btn');
       if (target !== null) {
         constructBtn.forEach((item, i) => {

@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-12">
-                    <form class="main-form text-center wow fadeInRight">
+                    <form class="main-form capture-form text-center wow fadeInRight">
                         <h4>Заказать консультацию!</h4>
                         <p>Не знаете как построить канализацию? <br> Закажите <span>бесплатную</span> консультацию <br>
                             мы
@@ -195,15 +195,15 @@
                                         </select>
                                     </div>
 
-                                    <div class="title-text">второй колодец (дренажный)</div>
-                                    <div class="select-box">
+                                    <div class="title-text" style="display: none">второй колодец (дренажный)</div>
+                                    <div class="select-box" style="display: none">
                                         <p><strong>Диаметр</strong></p>
                                         <select class="form-control expand">
                                             <option>1.4 метра</option>
                                             <option>2 метра</option>
                                         </select>
                                     </div>
-                                    <div class="select-box">
+                                    <div class="select-box" style="display: none">
                                         <p><strong>Количество колец</strong></p>
                                         <select class="form-control expand">
                                             <option>1 штука</option>
@@ -260,7 +260,7 @@
                                 aria-labelledby="headingFour">
                                 <div class="panel-body">
                                     <p>Введите расстояние до дома</p>
-                                    <input type="text">
+                                    <input id="distance" type="text">
                                     <button class="button construct-btn call-btn">Получить расчет и скидку</button>
                                 </div>
                             </div>
@@ -452,7 +452,8 @@
                     <p class="question">Остались вопросы?</p>
                     <p>Введите свой вопрос и в течении 15 минут я свяжусь с вами!</p>
                     <form class="director-form">
-                        <input type="text" name="user_quest" placeholder="Введите свой вопрос" required>
+                        <input type="text" name="user_quest" placeholder="Введите свой вопрос" class="director-input"
+                            required>
                         <button class="button director-btn consultation-btn" name="submit" type="submit">Получить
                             консультацию
                         </button>
