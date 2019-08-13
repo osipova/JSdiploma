@@ -1,6 +1,7 @@
 const sendForm = (calcResult) => {
 
-  const form = document.querySelectorAll('.capture-form');
+  const form = document.querySelectorAll('.capture-form'),
+    directorForm = document.querySelector('.director-form');
 
   const errorMassage = 'Что-то пошло не так...',
     loadMassage = 'Загурзка...',
@@ -10,9 +11,6 @@ const sendForm = (calcResult) => {
   statusMessage.style.color = '#000';
   statusMessage.style.csstext = 'font-size: 2rem';
   statusMessage.classList.add('request');
-
-  const resultValue = document.getElementById('calc-result');
-
 
   form.forEach((item) => {
     item.addEventListener('input', (event) => {
@@ -48,8 +46,6 @@ const sendForm = (calcResult) => {
 
       const inputDirectorForm = document.querySelector('.director-input').value;
 
-      console.log(inputDirectorForm);
-
       if (inputDirectorForm) {
         body[`question`] = inputDirectorForm;
       }
@@ -68,6 +64,7 @@ const sendForm = (calcResult) => {
         });
 
       item.reset();
+      directorForm.reset();
     });
   });
 
