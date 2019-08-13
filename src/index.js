@@ -1,5 +1,14 @@
 'use strict';
 
+import "@babel/polyfill";
+import 'nodelist-foreach-polyfill';
+import 'formdata-polyfill';
+import 'fetch-polyfill';
+import 'es6-promise';
+
+import elementClosest from 'element-closest';
+elementClosest(window);
+
 import popup from './modules/popup';
 import sentenceBtn from './modules/sentenceBtn';
 import questionsPanel from './modules/questionsPanel';
