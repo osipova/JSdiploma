@@ -38,7 +38,7 @@ const sendForm = (calcResult) => {
 
       let body;
 
-      if (Object.keys(calcResult).length !== 0) {
+      if (Object.keys(calcResult).length !== 0 && item.closest('.popup-call')) {
         body = Object.assign(dataForms, calcResult);
       } else {
         body = Object.assign({}, dataForms);
@@ -46,7 +46,7 @@ const sendForm = (calcResult) => {
 
       const inputDirectorForm = document.querySelector('.director-input').value;
 
-      if (inputDirectorForm) {
+      if (inputDirectorForm && item.closest('.popup-consultation')) {
         body[`question`] = inputDirectorForm;
       }
 

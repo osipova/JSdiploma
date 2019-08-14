@@ -5,17 +5,31 @@ const constructor = () => {
     collapses = document.querySelectorAll('.panel-collapse'),
     constructBtn = document.querySelectorAll('.construct-btn');
 
+  // const inPanel = (index) => {
+  //   if (!collapses[index].classList.contains('in')) {
+  //     collapses[index].classList.add('in');
+  //   } else {
+  //     collapses[index].classList.remove('in');
+  //   }
+  // };
+
   const inPanel = (index) => {
-    if (!collapses[index].classList.contains('in')) {
-      collapses[index].classList.add('in');
-    } else {
-      collapses[index].classList.remove('in');
+    for (let i = 0; i < collapses.length - 3; i++) {
+      if (i !== index) {
+        collapses[i].classList.remove('in');
+      } else {
+        if (!collapses[i].classList.contains('in')) {
+          collapses[i].classList.add('in');
+        } else {
+          collapses[i].classList.remove('in');
+        }
+      }
     }
   };
 
-  const inBtn = (index) => {
-    collapses[index].classList.add('in');
-  };
+  // const inBtn = (index) => {
+  //   collapses[index].classList.add('in');
+  // };
 
   constructor.addEventListener('click', (event) => {
 
@@ -28,7 +42,7 @@ const constructor = () => {
       if (target !== null) {
         constructBtn.forEach((item, i) => {
           if (item === target) {
-            inBtn(i + 1);
+            inPanel(i + 1);
           }
         });
       }
